@@ -8,17 +8,20 @@ import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
+import test.test;
 
 
  
 public class Garderie implements garderieInterface {
 
 	private String idRL;
-	private Double prixTotal = 0.0;
-	private int nbQuartHeure = 0, nbQuartHeureTotal = 0;
-	private Double prixQuartHeure = 0.0;
+	public static Double prixTotal = 0.0;
+	public static int nbQuartHeure = 0;
+	public static int nbQuartHeureRetard = 0;
+	private int nbQuartHeureTotal = 0;
+	public static Double prixQuartHeure = 0.0;
 	private String nom;
-	private int nbRepas = 0;
+	public static int nbRepas = 0;
 	
 	public int getNbRepas() {
 		return nbRepas;
@@ -122,6 +125,7 @@ public class Garderie implements garderieInterface {
 					nbQuartHeure = ((-18+rsE.getTime("heureDepartSoir").getHours())*4) ;
 					nbQuartHeure = nbQuartHeure + ((-30+rsE.getTime("heureDepartSoir").getMinutes())/15);
 					prixTotal = prixTotal+5*nbQuartHeure;
+					nbQuartHeureRetard = nbQuartHeureRetard + nbQuartHeure;
 					nbQuartHeure = -nbQuartHeure;
 				}
 				
@@ -144,7 +148,10 @@ public class Garderie implements garderieInterface {
 				System.out.println(nbQuartHeure);
 				prixTotal = prixTotal + prixQuartHeure*nbQuartHeure ;
 				prixTotal = arrondie(prixTotal,2);
+				test.testResultat();
 				nbQuartHeure = 0;
+				nbQuartHeureRetard = 0;
+				
 			}			
 			
 			System.out.println(prixTotal);
