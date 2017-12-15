@@ -6,4 +6,4 @@ jobs:
         command: 'echo "test yml"'
 test:
   override:
-    - mvn PPE4/test
+    - javac PPE4/test
