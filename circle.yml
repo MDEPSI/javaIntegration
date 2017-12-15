@@ -4,3 +4,6 @@ jobs:
     steps:
       - run: 
         command: 'echo "test yml"'
+test:
+  override:
+    - junit test/test
