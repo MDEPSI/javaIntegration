@@ -6,4 +6,4 @@ jobs:
         command: 'echo "test yml"'
 test:
   override:
-    - junit test/test
+    - mv test/test
