@@ -89,7 +89,7 @@ public class Garderie implements garderieInterface {
 	
 	Connection newConnection() throws SQLException{
 		final String url = "jdbc:mysql://localhost/garderie";
-		Connection conn = DriverManager.getConnection(url, "root", "");
+		Connection conn = DriverManager.getConnection(url, System.getenv("User"), "");
 		return conn;
 		
 	}
