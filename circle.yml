@@ -1,5 +1,5 @@
 jobs:
   build:
     steps:
-      - run: echo "test yml"
-      - run: mvn Garderie
+      - run: 
+        command: echo "test yml"
