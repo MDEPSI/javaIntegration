@@ -6,4 +6,4 @@ jobs:
         command: 'echo "test yml"'
 test:
   override:
-    - javac PPE4/src/test/test.java
+#    - javac PPE4/src/test/test.java
