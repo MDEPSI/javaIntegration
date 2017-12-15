@@ -1,4 +1,5 @@
 jobs:
   build:
     steps:
-      - run : echo "test yml"
+      - run: make test
+      - run: echo "test yml"
