@@ -1,1 +1,4 @@
-run : echo "test yml"
+jobs:
+  build:
+	steps:
+		- run : echo "test yml"
