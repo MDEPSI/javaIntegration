@@ -1,5 +1,4 @@
 jobs:
   build:
-  working_directory: ~/PPE4
     steps:
       - run: echo "test yml"
