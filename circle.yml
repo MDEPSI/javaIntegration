@@ -2,4 +2,4 @@ jobs:
   build:
     steps:
       - run: 
-        command: echo "test yml"
+        command: 'echo "test yml"'
