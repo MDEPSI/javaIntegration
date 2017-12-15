@@ -1,5 +1,6 @@
 jobs:
   build:
+    working_directory: ~/circleci-demo-java-spring
     steps:
       - run: 
         command: 'echo "test yml"'
