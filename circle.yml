@@ -1,1 +1,1 @@
-run : echo "test yml"
+echo "test yml"
