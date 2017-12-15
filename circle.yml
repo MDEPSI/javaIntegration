@@ -7,3 +7,4 @@ jobs:
 test:
   override:
     - java -version 
+    - echo "User"
