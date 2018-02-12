@@ -16,7 +16,7 @@ test:
   override:
     - java -version 
     #- echo CIRCLE_BRANCH
-    - java -cp javaIntegration/PPE4/bin/test
+    - java javaIntegration/PPE4/bin/test.class
 
 workflows:
   version: 2
