@@ -29,10 +29,6 @@ test:
     - java -version 
     - echo CIRCLE_BRANCH
 
-machine:
-  environment:
-    DATABASE_URL: http://localhost:800/phpmyadmin/#PMAURL-1:db_structure.php?db=garderie&table=&server=1&target=&token=95bb5c94ac575adf3077ac1072440729
-
 workflows:
   version: 2
   build-test-and-deploy:
