@@ -1,30 +1,18 @@
 jobs:
   build:
     working_directory: ~/circleci-demo-java-spring
-  docker:
-      - image: ruby:2.3.1
-        environment:
-        - PG_HOST=localhost
-      # The following example uses the official postgres 9.6 image, you may also use circleci/postgres:9.6 
-      # which includes a few enhancements and modifications. It is possible to use either image.
-      - image: postgres:10.2
-        environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_DB=garderie
-  steps:
-      - checkout
-      - run:
-          name: Install Ruby Dependencies
-          command: bundle install
-      - run: 
-          name: Set up DB
-          command: |
-            bundle exec rake db:create db:schema:load --trace
-            bundle exec rake db:migrate
-        environment:
-          DATABASE_URL: "postgres://postgres@localhost:5432/garderie"
+
+machine:
+  environment:
+    DATABASE_URL: postgres://postgres@localhost:5432/garderie
 
 test:
+  host: localhost
+  username: ubuntu
+  password: ubuntu
+  database: test_database_name
+  adapter: postgresql
+  port: 5433
   override:
     - java -version 
     - echo CIRCLE_BRANCH
