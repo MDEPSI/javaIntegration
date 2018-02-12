@@ -9,7 +9,7 @@ jobs:
       # which includes a few enhancements and modifications. It is possible to use either image.
       - image: postgres:10.2
         environment:
-        - POSTGRES_USER=ubuntu
+        - POSTGRES_USER=postgres
         - POSTGRES_DB=garderie
   steps:
       - checkout
@@ -22,7 +22,7 @@ jobs:
             bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate
         environment:
-          DATABASE_URL: "postgres://ubuntu@localhost:5432/garderie"
+          DATABASE_URL: "postgres://postgres@localhost:5432/garderie"
 
 test:
   override:
