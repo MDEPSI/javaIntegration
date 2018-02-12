@@ -8,14 +8,14 @@ machine:
 
 test:
   host: localhost
-  username: ubuntu
-  password: ubuntu
-  database: test_database_name
+  #username: ubuntu
+  password: root
+  database: garderie
   adapter: postgresql
   port: 5433
   override:
     - java -version 
-    - echo CIRCLE_BRANCH
+    #- echo CIRCLE_BRANCH
 
 workflows:
   version: 2
