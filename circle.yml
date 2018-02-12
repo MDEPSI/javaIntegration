@@ -5,11 +5,7 @@ jobs:
 machine:
   environment:
     DATABASE_URL: postgres://postgres@localhost:5432/garderie
-steps:
-command: |
-            mkdir -p ~/PPE4/test
-            bundle exec java --format json --out ~/PPE4/test/test
-            
+         
 test:
   host: localhost
   #username: ubuntu
@@ -20,7 +16,7 @@ test:
   override:
     - java -version 
     #- echo CIRCLE_BRANCH
-    - java javaIntegration/PPE4/bin/test
+    - java -cp javaIntegration/PPE4/bin/test
 
 workflows:
   version: 2
